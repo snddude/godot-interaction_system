@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bhlj1do32i2lb"]
+
+[ext_resource type="PackedScene" uid="uid://dm8qf3mrymlxs" path="res://testing/resources/scenes/prefabs/interacting_player.tscn" id="1_grvg4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_grvg4"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_qd545"]
+sky_material = SubResource("ProceduralSkyMaterial_grvg4")
+
+[sub_resource type="Environment" id="Environment_r41j4"]
+background_mode = 2
+sky = SubResource("Sky_qd545")
+
+[node name="Main" type="Node3D" unique_id=1253142003]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1199703418]
+environment = SubResource("Environment_r41j4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=423364848]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="InteractingPlayer" parent="." unique_id=1875158480 instance=ExtResource("1_grvg4")]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=607258148]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=538742626]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+size = Vector3(20, 1, 20)
