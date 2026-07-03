@@ -13,6 +13,8 @@ sky_material = SubResource("ProceduralSkyMaterial_grvg4")
 background_mode = 2
 sky = SubResource("Sky_qd545")
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_qd545"]
+
 [node name="Main" type="Node3D" unique_id=1253142003]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1199703418]
@@ -22,11 +24,41 @@ environment = SubResource("Environment_r41j4")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="InteractingPlayer" parent="." unique_id=1875158480 instance=ExtResource("1_grvg4")]
+[node name="Playground" type="Node3D" parent="." unique_id=726979859]
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=607258148]
+[node name="Geometry" type="CSGCombiner3D" parent="Playground" unique_id=607258148]
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=538742626]
+[node name="CSGBox3D" type="CSGBox3D" parent="Playground/Geometry" unique_id=538742626]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-size = Vector3(20, 1, 20)
+size = Vector3(50, 1, 50)
+
+[node name="WallNorth" type="StaticBody3D" parent="Playground" unique_id=1093798598]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -25)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/WallNorth" unique_id=1317071616]
+shape = SubResource("WorldBoundaryShape3D_qd545")
+
+[node name="WallEast" type="StaticBody3D" parent="Playground" unique_id=523191371]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 25, 0, 0)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/WallEast" unique_id=1193495306]
+shape = SubResource("WorldBoundaryShape3D_qd545")
+
+[node name="WallSouth" type="StaticBody3D" parent="Playground" unique_id=2101969566]
+transform = Transform3D(1, 0, 0, 0, 0, 0.99999994, 0, -0.99999994, 0, 0, 0, 25)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/WallSouth" unique_id=1838364541]
+shape = SubResource("WorldBoundaryShape3D_qd545")
+
+[node name="WallWest" type="StaticBody3D" parent="Playground" unique_id=1761510210]
+transform = Transform3D(1.1924881e-08, 0.9999999, 0, -1, 1.1924879e-08, 0, 0, 0, 0.9999999, -25, 0, 3.8146973e-06)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/WallWest" unique_id=1862375082]
+shape = SubResource("WorldBoundaryShape3D_qd545")
+
+[node name="InteractingPlayer" parent="." unique_id=1875158480 instance=ExtResource("1_grvg4")]
