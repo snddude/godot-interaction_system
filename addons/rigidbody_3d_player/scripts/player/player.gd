@@ -12,6 +12,8 @@ extends RigidBody3D
 @export var floor_decel_rate: float
 @export var air_accel_rate: float
 @export var air_decel_rate: float
+@export_group("Components")
+@export var interaction: Interaction
 @export_group("Nodes")
 @export var neck: Node3D
 @export var head: Node3D
@@ -34,6 +36,9 @@ func _input(event: InputEvent) -> void:
 		neck.rotation_degrees.y -= deg_to_rad(event.relative.x * sensitivity)
 		head.rotation_degrees.x -= deg_to_rad(event.relative.y * sensitivity)
 		head.rotation_degrees.x = clamp(head.rotation_degrees.x, -90.0, 90.0)
+
+	if event.is_action_pressed("Interact"):
+		interaction.interact()
 
 
 func _process(_delta: float) -> void:
