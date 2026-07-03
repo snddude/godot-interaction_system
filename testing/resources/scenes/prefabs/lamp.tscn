@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bkt1uun5w07d4"]
+
+[ext_resource type="Script" uid="uid://dkrrkulc7rlnh" path="res://addons/interaction_system/scripts/components/interactable.gd" id="1_oo5dh"]
+[ext_resource type="Script" uid="uid://3o4wkk0svgxb" path="res://testing/scripts/prefabs/lamp.gd" id="1_os6hk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_os6hk"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
+emission = Color(1, 0.81960785, 0.5803922, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ilxo7"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_os6hk")
+radius = 0.15
+height = 0.3
+radial_segments = 20
+rings = 10
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_os6hk"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 1.0
+radial_segments = 20
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ilxo7"]
+size = Vector3(0.3, 1.5, 0.3)
+
+[node name="Lamp" type="StaticBody3D" unique_id=208166066 node_paths=PackedStringArray("light", "label", "bulb")]
+script = ExtResource("1_os6hk")
+light = NodePath("OmniLight3D")
+label = NodePath("Label3D")
+bulb = NodePath("Bulb")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=307340535]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1767023, 0)
+billboard = 2
+text = "Lamp: OFF"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1184169921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83452415, 0)
+visible = false
+light_color = Color(1, 0.81960785, 0.5803922, 1)
+shadow_enabled = true
+omni_range = 10.0
+
+[node name="Bulb" type="MeshInstance3D" parent="." unique_id=1243645069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83452415, 0)
+mesh = SubResource("SphereMesh_ilxo7")
+
+[node name="Stand" type="MeshInstance3D" parent="." unique_id=947994768]
+mesh = SubResource("CylinderMesh_os6hk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1079895969]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+shape = SubResource("BoxShape3D_ilxo7")
+
+[node name="Interactable" type="Node" parent="." unique_id=580331200]
+script = ExtResource("1_oo5dh")
+metadata/_custom_type_script = "uid://dkrrkulc7rlnh"
+
+[connection signal="interacted" from="Interactable" to="." method="toggle"]

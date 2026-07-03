@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhlj1do32i2lb"]
 
 [ext_resource type="PackedScene" uid="uid://dm8qf3mrymlxs" path="res://testing/resources/scenes/prefabs/interacting_player.tscn" id="1_grvg4"]
+[ext_resource type="PackedScene" uid="uid://bkt1uun5w07d4" path="res://testing/resources/scenes/prefabs/lamp.tscn" id="2_qd545"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_grvg4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -62,3 +63,15 @@ metadata/_edit_group_ = true
 shape = SubResource("WorldBoundaryShape3D_qd545")
 
 [node name="InteractingPlayer" parent="." unique_id=1875158480 instance=ExtResource("1_grvg4")]
+
+[node name="Lamp" parent="." unique_id=208166066 instance=ExtResource("2_qd545")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Lamp2" parent="." unique_id=2109592026 instance=ExtResource("2_qd545")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Lamp3" parent="." unique_id=1831704040 instance=ExtResource("2_qd545")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Lamp4" parent="." unique_id=512307205 instance=ExtResource("2_qd545")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
