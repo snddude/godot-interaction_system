@@ -1,3 +1,4 @@
+@icon("res://addons/interaction_system/assets/sprites/icons/tap.svg")
 class_name Interaction
 extends Node
 

@@ -1,3 +1,4 @@
+@icon("res://addons/interaction_system/assets/sprites/icons/switch.svg")
 class_name Interactable
 extends Node
 
