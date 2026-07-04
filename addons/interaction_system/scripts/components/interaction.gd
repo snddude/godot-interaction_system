@@ -11,7 +11,14 @@ func interact() -> void:
 	if collider == null:
 		return
 
-	for child in collider.get_children():
-		if child is Interactable:
-			child.interact()
-			break
+	if not collider.has_meta(Interactable.META):
+		return
+
+	var meta: NodePath = collider.get_meta(Interactable.META)
+	var interactable: Interactable = get_node_or_null(meta)
+
+	if interactable == null:
+		push_error("Interactable component missing for node %s" % owner.get_path())
+		return
+
+	interactable.interact()
