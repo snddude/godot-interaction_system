@@ -1,4 +1,4 @@
-@icon("res://addons/interaction_system/assets/sprites/icons/switch.svg")
+@icon("res://addons/interaction_system/assets/sprites/icons/interactable.svg")
 class_name Interactable
 extends Node
 
