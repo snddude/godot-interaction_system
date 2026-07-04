@@ -18,7 +18,7 @@ func interact() -> void:
 	var interactable: Interactable = get_node_or_null(meta)
 
 	if interactable == null:
-		push_error("Interactable component is missing for node %s" % owner.get_path())
+		push_error("%s missing Interactable component" % collider.get_path())
 		return
 
 	interactable.interact()

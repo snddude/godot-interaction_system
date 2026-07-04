@@ -10,7 +10,7 @@ func _ready() -> void:
 	var parent: Node = get_parent()
 
 	if parent == null:
-		push_error("Interactable component %s is missing a parent" % get_path())
+		push_error("%s missing parent" % get_path())
 		return
 
 	parent.set_meta(META, get_path())
