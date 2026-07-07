@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func _get_configuration_warnings() -> PackedStringArray:
 	if raycast == null:
-		return ["Interaction component needs a reference to a Raycast3D"]
+		return ["Interaction component needs a reference to a Raycast3D. Assign one in the inspector"]
 
 	return []
 
