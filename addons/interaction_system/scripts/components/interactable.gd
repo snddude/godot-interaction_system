@@ -5,7 +5,7 @@ extends Node
 
 signal interacted
 
-const META: String = "InteractableNodePath"
+const META: String = "InteractFunction"
 
 
 func _ready() -> void:
@@ -19,7 +19,7 @@ func _ready() -> void:
 		push_error("%s missing parent" % get_path())
 		return
 
-	parent.set_meta(META, get_path())
+	parent.set_meta(META, interact)
 
 
 func _get_configuration_warnings() -> PackedStringArray:
