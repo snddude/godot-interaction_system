@@ -62,16 +62,16 @@ metadata/_edit_group_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/WallWest" unique_id=1862375082]
 shape = SubResource("WorldBoundaryShape3D_qd545")
 
-[node name="InteractingPlayer" parent="." unique_id=1875158480 instance=ExtResource("1_grvg4")]
-
-[node name="Lamp" parent="." unique_id=208166066 instance=ExtResource("2_qd545")]
+[node name="Lamp" parent="Playground" unique_id=208166066 instance=ExtResource("2_qd545")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
-[node name="Lamp2" parent="." unique_id=2109592026 instance=ExtResource("2_qd545")]
+[node name="Lamp2" parent="Playground" unique_id=2109592026 instance=ExtResource("2_qd545")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="Lamp3" parent="." unique_id=1831704040 instance=ExtResource("2_qd545")]
+[node name="Lamp3" parent="Playground" unique_id=1831704040 instance=ExtResource("2_qd545")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="Lamp4" parent="." unique_id=512307205 instance=ExtResource("2_qd545")]
+[node name="Lamp4" parent="Playground" unique_id=512307205 instance=ExtResource("2_qd545")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="InteractingPlayer" parent="." unique_id=1875158480 instance=ExtResource("1_grvg4")]
