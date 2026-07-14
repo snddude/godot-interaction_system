@@ -33,11 +33,4 @@ func interact() -> void:
 	if not collider.has_meta(Interactable.META):
 		return
 
-	var meta: NodePath = collider.get_meta(Interactable.META)
-	var interactable: Interactable = get_node_or_null(meta)
-
-	if interactable == null:
-		push_error("%s missing Interactable component" % collider.get_path())
-		return
-
-	interactable.interact()
+	collider.get_meta(Interactable.META).call()
