@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dm8qf3mrymlxs" path="res://testing/resources/scenes/prefabs/interacting_player.tscn" id="1_grvg4"]
 [ext_resource type="PackedScene" uid="uid://bkt1uun5w07d4" path="res://testing/resources/scenes/prefabs/lamp.tscn" id="2_qd545"]
+[ext_resource type="PackedScene" uid="uid://dnan4asg4e5uk" path="res://testing/resources/scenes/prefabs/door.tscn" id="3_r41j4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_grvg4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -34,44 +35,72 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 size = Vector3(50, 1, 50)
 
-[node name="WallNorth" type="StaticBody3D" parent="Playground" unique_id=1093798598]
+[node name="Interactables" type="Node3D" parent="Playground" unique_id=919222909]
+
+[node name="Lamp" parent="Playground/Interactables" unique_id=208166066 instance=ExtResource("2_qd545")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Lamp2" parent="Playground/Interactables" unique_id=2109592026 instance=ExtResource("2_qd545")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Lamp3" parent="Playground/Interactables" unique_id=1831704040 instance=ExtResource("2_qd545")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="Lamp4" parent="Playground/Interactables" unique_id=512307205 instance=ExtResource("2_qd545")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="Door" parent="Playground/Interactables" unique_id=1228403483 instance=ExtResource("3_r41j4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.5, -0.5, 4)
+
+[node name="Door2" parent="Playground/Interactables" unique_id=1970545180 instance=ExtResource("3_r41j4")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.5, -0.5, 4)
+
+[node name="Door5" parent="Playground/Interactables" unique_id=27780339 instance=ExtResource("3_r41j4")]
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, 2.25, -0.5, 2.25)
+
+[node name="Door6" parent="Playground/Interactables" unique_id=146311840 instance=ExtResource("3_r41j4")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 5.75, -0.5, 2.25)
+
+[node name="Door7" parent="Playground/Interactables" unique_id=1602397483 instance=ExtResource("3_r41j4")]
+transform = Transform3D(-0.70710665, 0, -0.7071069, 0, 1, 0, 0.7071069, 0, -0.70710665, 5.75, -0.5, 5.75)
+
+[node name="Door8" parent="Playground/Interactables" unique_id=1141422996 instance=ExtResource("3_r41j4")]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, 2.25, -0.5, 5.75)
+
+[node name="Door3" parent="Playground/Interactables" unique_id=1847267285 instance=ExtResource("3_r41j4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 1.5)
+
+[node name="Door4" parent="Playground/Interactables" unique_id=1799549179 instance=ExtResource("3_r41j4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, -0.5, 6.5)
+
+[node name="Borders" type="Node3D" parent="Playground" unique_id=1487906222]
+
+[node name="WallNorth" type="StaticBody3D" parent="Playground/Borders" unique_id=1093798598]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -25)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/WallNorth" unique_id=1317071616]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/Borders/WallNorth" unique_id=1317071616]
 shape = SubResource("WorldBoundaryShape3D_qd545")
 
-[node name="WallEast" type="StaticBody3D" parent="Playground" unique_id=523191371]
+[node name="WallEast" type="StaticBody3D" parent="Playground/Borders" unique_id=523191371]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 25, 0, 0)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/WallEast" unique_id=1193495306]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/Borders/WallEast" unique_id=1193495306]
 shape = SubResource("WorldBoundaryShape3D_qd545")
 
-[node name="WallSouth" type="StaticBody3D" parent="Playground" unique_id=2101969566]
+[node name="WallSouth" type="StaticBody3D" parent="Playground/Borders" unique_id=2101969566]
 transform = Transform3D(1, 0, 0, 0, 0, 0.99999994, 0, -0.99999994, 0, 0, 0, 25)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/WallSouth" unique_id=1838364541]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/Borders/WallSouth" unique_id=1838364541]
 shape = SubResource("WorldBoundaryShape3D_qd545")
 
-[node name="WallWest" type="StaticBody3D" parent="Playground" unique_id=1761510210]
+[node name="WallWest" type="StaticBody3D" parent="Playground/Borders" unique_id=1761510210]
 transform = Transform3D(1.1924881e-08, 0.9999999, 0, -1, 1.1924879e-08, 0, 0, 0, 0.9999999, -25, 0, 3.8146973e-06)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/WallWest" unique_id=1862375082]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Playground/Borders/WallWest" unique_id=1862375082]
 shape = SubResource("WorldBoundaryShape3D_qd545")
-
-[node name="Lamp" parent="Playground" unique_id=208166066 instance=ExtResource("2_qd545")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-
-[node name="Lamp2" parent="Playground" unique_id=2109592026 instance=ExtResource("2_qd545")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-
-[node name="Lamp3" parent="Playground" unique_id=1831704040 instance=ExtResource("2_qd545")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-
-[node name="Lamp4" parent="Playground" unique_id=512307205 instance=ExtResource("2_qd545")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="InteractingPlayer" parent="." unique_id=1875158480 instance=ExtResource("1_grvg4")]
