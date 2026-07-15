@@ -4,28 +4,32 @@ class_name Interaction
 extends Node
 
 @export_group("Nodes")
-@export var raycast: RayCast3D:
+@export_node_path("RayCast2D", "RayCast3D") var raycast: NodePath:
 	set(value):
 		raycast = value
 
 		if Engine.is_editor_hint(): 
 			update_configuration_warnings()
 
+var _ray = null
+
 
 func _ready() -> void:
+	_ray = get_node(raycast)
+
 	if Engine.is_editor_hint(): 
 		update_configuration_warnings()
 
 
 func _get_configuration_warnings() -> PackedStringArray:
-	if raycast == null:
+	if raycast == NodePath(""):
 		return ["Interaction component needs a reference to a Raycast3D. Assign one in the inspector"]
 
 	return []
 
 
 func interact() -> void:
-	var collider: Node = raycast.get_collider()
+	var collider: Node = _ray.get_collider()
 
 	if collider == null:
 		return

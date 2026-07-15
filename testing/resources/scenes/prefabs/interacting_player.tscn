@@ -9,7 +9,7 @@ interaction = NodePath("Interaction")
 [node name="RayCast3D" type="RayCast3D" parent="Neck/Head/Eyes" parent_id_path=PackedInt32Array(1756693571) index="0" unique_id=1475860606]
 target_position = Vector3(0, 0, -3)
 
-[node name="Interaction" type="Node" parent="." index="4" unique_id=888970008 node_paths=PackedStringArray("raycast")]
+[node name="Interaction" type="Node" parent="." index="4" unique_id=888970008]
 script = ExtResource("2_4sw0x")
 raycast = NodePath("../Neck/Head/Eyes/RayCast3D")
 metadata/_custom_type_script = "uid://cm4qu6pf8htev"
