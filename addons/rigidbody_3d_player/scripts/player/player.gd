@@ -40,6 +40,9 @@ func _input(event: InputEvent) -> void:
 		head.rotation_degrees.x -= deg_to_rad(event.relative.y * sensitivity)
 		head.rotation_degrees.x = clamp(head.rotation_degrees.x, -90.0, 90.0)
 
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+
 	if event.is_action_pressed("Interact"):
 		interaction.interact()
 
