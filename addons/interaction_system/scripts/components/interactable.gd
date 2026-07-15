@@ -7,6 +7,8 @@ signal interacted
 
 const META: String = "InteractFunction"
 
+@export var enabled: bool = true
+
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -40,5 +42,14 @@ func _get_configuration_warnings() -> PackedStringArray:
 	return []
 
 
+func enable() -> void:
+	enabled = true
+
+
+func disable() -> void:
+	enabled = false
+
+
 func interact() -> void:
-	interacted.emit()
+	if enabled: 
+		interacted.emit()
