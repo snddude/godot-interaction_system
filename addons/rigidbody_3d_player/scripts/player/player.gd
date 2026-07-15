@@ -1,6 +1,8 @@
 class_name Player
 extends RigidBody3D
 
+static var instance: Player = null
+
 @export_group("Camera")
 @export var sensitivity: float
 @export_group("Movement")
@@ -29,6 +31,7 @@ var floor_normal := Vector3.ZERO
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	instance = self
 
 
 func _input(event: InputEvent) -> void:
