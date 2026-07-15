@@ -29,6 +29,9 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 
 func interact() -> void:
+	if not _ray.enabled:
+		_ray.force_raycast_update()
+
 	var collider: Node = _ray.get_collider()
 
 	if collider == null:
