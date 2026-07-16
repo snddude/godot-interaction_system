@@ -3,20 +3,34 @@ extends EditorPlugin
 
 
 func _enable_plugin() -> void:
-	# Add autoloads here.
-	pass
+	var event_key := InputEventKey.new()
+	event_key.physical_keycode = KEY_E
+
+	var input: Dictionary = {
+		"deadzone": 0.2,
+		"events": [event_key],
+	}
+
+	ProjectSettings.set_setting("input/interact", input)
+	ProjectSettings.save()
+
+	EditorNotifier.get_confirmation(
+			"The following actions have been added to the input map of your project:\n"
+					+ "- interact: E\n\nThese actions will not appear in the input map "
+					+ "tab until another action is added or the editor is restarted.",
+			"Save & Restart", 
+			"OK", 
+			EditorInterface.restart_editor.bind(true))
 
 
 func _disable_plugin() -> void:
-	# Remove autoloads here.
-	pass
+	ProjectSettings.set_setting("input/interact", null)
+	ProjectSettings.save()
 
-
-func _enter_tree() -> void:
-	# Initialization of the plugin goes here.
-	pass
-
-
-func _exit_tree() -> void:
-	# Clean-up of the plugin goes here.
-	pass
+	EditorNotifier.get_confirmation(
+			"The following actions have been removed from the input map of your project:\n"
+					+ "- interact: E\n\nThese actions will not disappear from the input map "
+					+ "tab until another action is added or the editor is restarted.",
+			"Save & Restart", 
+			"OK", 
+			EditorInterface.restart_editor.bind(true))
