@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d3nhxo1m3nerp" path="res://testing/scripts/components/rotating_door.gd" id="1_ucgil"]
 [ext_resource type="Script" uid="uid://dkrrkulc7rlnh" path="res://addons/interaction_system/scripts/components/interactable.gd" id="2_o3nam"]
-[ext_resource type="PackedScene" uid="uid://8kr130eqq88l" path="res://testing/resources/scenes/prefabs/door/door_frame.tscn" id="3_l43r6"]
-[ext_resource type="PackedScene" uid="uid://dkbc0fgj3v8p4" path="res://testing/resources/scenes/prefabs/door/door_panel.tscn" id="3_pfv2r"]
+[ext_resource type="PackedScene" uid="uid://8kr130eqq88l" path="res://testing/resources/scenes/prefabs/doors/door_frame.tscn" id="3_l43r6"]
+[ext_resource type="PackedScene" uid="uid://dkbc0fgj3v8p4" path="res://testing/resources/scenes/prefabs/doors/door_panel.tscn" id="3_pfv2r"]
 
 [node name="Door" type="Node3D" unique_id=1970545180]
 
