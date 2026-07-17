@@ -1,0 +1,44 @@
+[gd_scene format=4 uid="uid://8kr130eqq88l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4n8u1"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dd4g5"]
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.04, 1, 2, 0.08),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAgAEAAMAAAAFAAEAAwAEAAYABgABAAUAAwAGAAcABgAFAAcAAwAHAAgAAAADAAkAAwAIAAkACgAFAAAAAAAJAAoACwAHAAUACgALAAUACwAIAAcADAAKAAkACAAMAAkADAANAAoACwAKAA0ACAAOAAwACwANAA8ACAAPAA4ACAALAA8A"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("////////AAD//wAAAAAAAP//AAD//wAAMvOY+f//AAAy8wAA//8AAP////8AAAAAMvMAAAAAAAAy85j5AAAAAMwMmPkAAAAAzAyY+f//AAAAAP////8AAAAA//8AAAAAzAwAAP//AAAAAAAA//8AAMwMAAAAAAAAAAAAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xdqio"]
+resource_name = "mdl_door_Cube_002"
+_surfaces = [{
+"aabb": AABB(-0.5, 0, -0.04, 1, 2, 0.08),
+"attribute_data": PackedByteArray("/5//P/9f/3//X/8//5//f/9fMoP/n/9/b54yg/9f/3//n/+/b57MvP9f/7//X8y8/5+hV/9fXWj/n11o/1+hV/+f/7//X////1//v/+f////n6HX/19c6P+fXOj/X6HX/1//P2+ezDz/n/8//1/MPG+eMwP/nwAA/18zA/9fAAD/3/8//5//f/+f/z//3/9//5+hV//fXWj/36FX/59daA=="),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAGAAUACAAJAAYACQAIAAoACQAKAAsADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAGgAZABwAGgAcAB0AHgAdABwAHgAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUA"),
+"material": SubResource("StandardMaterial3D_4n8u1"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("////////VNX//wAAAABU1f//AAD//1TV/////wAAVNUy8wAAAAD///////8AAP//MvOY+QAA/////wAAAAD//wAA//8AAP//zAyY+QAA//8AAAAAAAD//8wMAAAAAP//MvOY+f//qioy8wAAAACqKjLzmPkAAKoqMvMAAP//qioAAP//AABU1QAAAAD//1TVAAAAAAAAVNUAAP////9U1cwMmPkAAKoqzAwAAP//qirMDJj5//+qKswMAAAAAKoq//8AAP///78y85j5////v/////////+/MvMAAP///7/MDJj5////vwAA//////+/zAwAAP///78AAAAA////vwAA/////////////wAA/////////////wAA//8AAP//MvOY+f//AADMDJj5AAAAAMwMmPn//wAAMvOY+QAAAACqKqoqqiqqKqoqqiqqKqoq/7//v/+//7//v/+//7//v/+//7//v/+//7//v/+//79U1VTVVNVU1VTVVNVU1VTVVNVU1VTVVNVU1VTVVNVU1aoqqiqqKqoqqiqqKqoqqir///////////////////////////////////////////9//7//f/+//3//v/9//7//f/8//3//P/9//z//f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_dd4g5")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xl5p8"]
+data = PackedVector3Array(-0.45, 1.9500002, -0.04, -0.45, 0, 0.04, -0.45, 1.9500002, 0.04, -0.45, 1.9500002, -0.04, -0.45, 0, -0.04, -0.45, 0, 0.04, 0.45, 0, -0.04, 0.5, 2, -0.04, 0.45, 1.95, -0.04, 0.45, 0, -0.04, 0.5, 0, -0.04, 0.5, 2, -0.04, 0.45, 1.95, 0.04, 0.45, 0, -0.04, 0.45, 1.95, -0.04, 0.45, 1.95, 0.04, 0.45, 0, 0.04, 0.45, 0, -0.04, -0.45, 1.9500002, -0.04, -0.5, 0, -0.04, -0.45, 0, -0.04, -0.45, 1.9500002, -0.04, -0.5, 2, -0.04, -0.5, 0, -0.04, 0.5, 0, 0.04, 0.45, 1.95, 0.04, 0.5, 2, 0.04, 0.5, 0, 0.04, 0.45, 0, 0.04, 0.45, 1.95, 0.04, -0.45, 0, 0.04, -0.5, 2, 0.04, -0.45, 1.9500002, 0.04, -0.45, 0, 0.04, -0.5, 0, 0.04, -0.5, 2, 0.04, 0.5, 2, 0.04, -0.45, 1.9500002, 0.04, -0.5, 2, 0.04, 0.5, 2, 0.04, 0.45, 1.95, 0.04, -0.45, 1.9500002, 0.04, -0.5, 2, -0.04, 0.45, 1.95, -0.04, 0.5, 2, -0.04, -0.5, 2, -0.04, -0.45, 1.9500002, -0.04, 0.45, 1.95, -0.04, -0.5, 2, -0.04, -0.5, 0, 0.04, -0.5, 0, -0.04, -0.5, 2, -0.04, -0.5, 2, 0.04, -0.5, 0, 0.04, 0.5, 2, 0.04, 0.5, 0, -0.04, 0.5, 0, 0.04, 0.5, 2, 0.04, 0.5, 2, -0.04, 0.5, 0, -0.04, -0.45, 1.9500002, -0.04, 0.45, 1.95, 0.04, 0.45, 1.95, -0.04, -0.45, 1.9500002, -0.04, -0.45, 1.9500002, 0.04, 0.45, 1.95, 0.04, -0.5, 2, 0.04, 0.5, 2, -0.04, 0.5, 2, 0.04, -0.5, 2, 0.04, -0.5, 2, -0.04, 0.5, 2, -0.04)
+
+[node name="DoorFrame" type="StaticBody3D" unique_id=22450819]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=423923216]
+mesh = SubResource("ArrayMesh_xdqio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1682974347]
+shape = SubResource("ConcavePolygonShape3D_xl5p8")
