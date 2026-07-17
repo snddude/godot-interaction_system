@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dm8qf3mrymlxs" path="res://testing/resources/scenes/prefabs/interacting_player.tscn" id="1_grvg4"]
 [ext_resource type="PackedScene" uid="uid://bkt1uun5w07d4" path="res://testing/resources/scenes/prefabs/lamp.tscn" id="2_qd545"]
+[ext_resource type="PackedScene" uid="uid://dajej607dru6k" path="res://testing/resources/scenes/prefabs/double_door.tscn" id="3_1ymth"]
 [ext_resource type="PackedScene" uid="uid://dnan4asg4e5uk" path="res://testing/resources/scenes/prefabs/door.tscn" id="3_r41j4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_grvg4"]
@@ -72,6 +73,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 1.5)
 
 [node name="Door4" parent="Playground/Interactables" unique_id=1799549179 instance=ExtResource("3_r41j4")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, -0.5, 6.5)
+
+[node name="DoubleDoor" parent="Playground/Interactables" unique_id=1124654654 instance=ExtResource("3_1ymth")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 6.5)
 
 [node name="Borders" type="Node3D" parent="Playground" unique_id=1487906222]
 

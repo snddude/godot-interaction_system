@@ -22,8 +22,8 @@ size = Vector3(1.8, 1.95, 0.25)
 [node name="HingeLeft" type="Marker3D" parent="." unique_id=75054094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1, 0)
 script = ExtResource("2_moch7")
-open_angle = 105.0
-open_speed = 2.25
+open_angle = -105.0
+open_speed = 2.0
 metadata/_custom_type_script = "uid://d3nhxo1m3nerp"
 
 [node name="DoorPanelLeft" parent="HingeLeft" unique_id=783903397 instance=ExtResource("1_hdfrv")]
@@ -37,7 +37,7 @@ metadata/_custom_type_script = "uid://dkrrkulc7rlnh"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 1, 0)
 script = ExtResource("2_moch7")
 open_angle = 105.0
-open_speed = 2.25
+open_speed = 2.0
 metadata/_custom_type_script = "uid://d3nhxo1m3nerp"
 
 [node name="DoorPanelRight" parent="HingeRight" unique_id=22123219 instance=ExtResource("1_hdfrv")]
