@@ -26,5 +26,5 @@ func _process(delta) -> void:
 
 func open() -> void:
 	_is_open = not _is_open
-	var open_direction: int = sign(Player.instance.head.global_basis.z.dot(global_basis.z))
+	var open_direction: int = sign(Player.instance.head.global_basis.z.dot(global_position))
 	_target_rotation = (open_angle if _is_open else 0.0) * open_direction
