@@ -19,26 +19,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.024999976, 0)
 operation = 2
 size = Vector3(1.8, 1.95, 0.25)
 
-[node name="HingeLeft" type="Marker3D" parent="." unique_id=75054094]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1, 0)
-script = ExtResource("2_moch7")
-open_angle = -105.0
-open_speed = 2.0
-metadata/_custom_type_script = "uid://d3nhxo1m3nerp"
-
-[node name="DoorPanelLeft" parent="HingeLeft" unique_id=783903397 instance=ExtResource("1_hdfrv")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 0.99999994, 0, 8.742278e-08, 0, -1, -0.45, -1, 0)
-
-[node name="Interactable" type="Node" parent="HingeLeft/DoorPanelLeft" unique_id=67251059]
-script = ExtResource("3_j0acx")
-metadata/_custom_type_script = "uid://dkrrkulc7rlnh"
-
 [node name="HingeRight" type="Marker3D" parent="." unique_id=738483492]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 1, 0)
 script = ExtResource("2_moch7")
 open_angle = 105.0
 open_speed = 2.0
 metadata/_custom_type_script = "uid://d3nhxo1m3nerp"
+metadata/_edit_group_ = true
 
 [node name="DoorPanelRight" parent="HingeRight" unique_id=22123219 instance=ExtResource("1_hdfrv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -1, 0)
@@ -47,7 +34,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -1, 0)
 script = ExtResource("3_j0acx")
 metadata/_custom_type_script = "uid://dkrrkulc7rlnh"
 
-[connection signal="interacted" from="HingeLeft/DoorPanelLeft/Interactable" to="HingeLeft" method="open"]
-[connection signal="interacted" from="HingeLeft/DoorPanelLeft/Interactable" to="HingeRight" method="open"]
-[connection signal="interacted" from="HingeRight/DoorPanelRight/Interactable" to="HingeLeft" method="open"]
+[node name="HingeLeft" type="Marker3D" parent="." unique_id=829063977]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.9, 1, 0)
+script = ExtResource("2_moch7")
+open_angle = 105.0
+open_speed = 2.0
+metadata/_custom_type_script = "uid://d3nhxo1m3nerp"
+metadata/_edit_group_ = true
+
+[node name="DoorPanelRight" parent="HingeLeft" unique_id=333554170 instance=ExtResource("1_hdfrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -1, 0)
+
+[node name="Interactable" type="Node" parent="HingeLeft/DoorPanelRight" unique_id=1177198275]
+script = ExtResource("3_j0acx")
+metadata/_custom_type_script = "uid://dkrrkulc7rlnh"
+
 [connection signal="interacted" from="HingeRight/DoorPanelRight/Interactable" to="HingeRight" method="open"]
+[connection signal="interacted" from="HingeRight/DoorPanelRight/Interactable" to="HingeLeft" method="open"]
+[connection signal="interacted" from="HingeLeft/DoorPanelRight/Interactable" to="HingeRight" method="open"]
+[connection signal="interacted" from="HingeLeft/DoorPanelRight/Interactable" to="HingeLeft" method="open"]
