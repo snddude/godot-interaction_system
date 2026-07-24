@@ -39,16 +39,7 @@ size = Vector3(50, 1, 50)
 [node name="Interactables" type="Node3D" parent="Playground" unique_id=919222909]
 
 [node name="Lamp" parent="Playground/Interactables" unique_id=208166066 instance=ExtResource("2_qd545")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-
-[node name="Lamp2" parent="Playground/Interactables" unique_id=2109592026 instance=ExtResource("2_qd545")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-
-[node name="Lamp3" parent="Playground/Interactables" unique_id=1831704040 instance=ExtResource("2_qd545")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-
-[node name="Lamp4" parent="Playground/Interactables" unique_id=512307205 instance=ExtResource("2_qd545")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="Door" parent="Playground/Interactables" unique_id=1228403483 instance=ExtResource("3_r41j4")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.5, -0.5, 4)
@@ -75,7 +66,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -0.5, 1.5)
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, -0.5, 6.5)
 
 [node name="DoubleDoor" parent="Playground/Interactables" unique_id=1124654654 instance=ExtResource("3_1ymth")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 6.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.5, 6.5)
+
+[node name="DoubleDoor2" parent="Playground/Interactables" unique_id=617173286 instance=ExtResource("3_1ymth")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4, -0.5, 1.5)
+
+[node name="DoubleDoor3" parent="Playground/Interactables" unique_id=1224150794 instance=ExtResource("3_1ymth")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5, -0.5, 4)
+
+[node name="DoubleDoor4" parent="Playground/Interactables" unique_id=2051938498 instance=ExtResource("3_1ymth")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -6.5, -0.5, 4)
+
+[node name="DoubleDoor5" parent="Playground/Interactables" unique_id=276423754 instance=ExtResource("3_1ymth")]
+transform = Transform3D(-0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, -0.7071068, -2.232233, -0.5, 2.232233)
+
+[node name="DoubleDoor6" parent="Playground/Interactables" unique_id=1809536487 instance=ExtResource("3_1ymth")]
+transform = Transform3D(0.7071069, 0, -0.70710665, 0, 1, 0, 0.70710665, 0, 0.7071069, -5.767767, -0.5, 5.767767)
+
+[node name="DoubleDoor7" parent="Playground/Interactables" unique_id=2045551936 instance=ExtResource("3_1ymth")]
+transform = Transform3D(-0.70710665, 0, -0.7071069, 0, 1, 0, 0.7071069, 0, -0.70710665, -5.767767, -0.5, 2.232233)
+
+[node name="DoubleDoor8" parent="Playground/Interactables" unique_id=1766448530 instance=ExtResource("3_1ymth")]
+transform = Transform3D(0.7071066, 0, 0.70710695, 0, 1, 0, -0.70710695, 0, 0.7071066, -2.232233, -0.5, 5.767767)
 
 [node name="Borders" type="Node3D" parent="Playground" unique_id=1487906222]
 
@@ -108,3 +120,4 @@ metadata/_edit_group_ = true
 shape = SubResource("WorldBoundaryShape3D_qd545")
 
 [node name="InteractingPlayer" parent="." unique_id=1875158480 instance=ExtResource("1_grvg4")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
