@@ -3,6 +3,7 @@
 class_name Interaction
 extends Node
 
+@export var enabled: bool = true
 @export_group("Nodes")
 @export_node_path("RayCast2D", "RayCast3D") var raycast: NodePath:
 	set(value):
@@ -30,7 +31,18 @@ func _get_configuration_warnings() -> PackedStringArray:
 	return []
 
 
+func enable() -> void:
+	enabled = true
+
+
+func disable() -> void:
+	enabled = false
+
+
 func interact() -> void:
+	if not enabled:
+		return
+
 	if not _ray.enabled:
 		_ray.force_raycast_update()
 
