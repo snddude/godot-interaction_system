@@ -15,10 +15,11 @@ var _ray = null
 
 
 func _ready() -> void:
-	_ray = get_node(raycast)
-
 	if Engine.is_editor_hint(): 
 		update_configuration_warnings()
+		return
+
+	_ray = get_node(raycast)
 
 
 func _get_configuration_warnings() -> PackedStringArray:
