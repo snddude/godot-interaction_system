@@ -17,7 +17,7 @@ The Interactable component should be added to the node that you want to serve as
 The Interaction component should be added to your player or other entity, that you want to be able to interact with interactable objects in your scene. You need to assign a raycast node (2D or 3D) to the Interaction component via the inspector, so it can detect interactables in your scene. To cause an interaction to happen you need to call the Interaction component's "interact" function.
 
 > [!Note]
-> There is a usage example available in this repository that you can look at. To do so, clone the repo and open it in Godot.
+> There is a usage example available in this repository that you can look at. To do so, just clone the repo and open it with Godot.
 
 ## License
 
