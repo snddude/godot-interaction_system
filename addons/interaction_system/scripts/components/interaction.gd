@@ -25,7 +25,7 @@ func _ready() -> void:
 
 func _get_configuration_warnings() -> PackedStringArray:
 	if raycast == NodePath(""):
-		return ["Interaction component needs a reference to a Raycast3D. "
+		return ["Interaction component needs a reference to a Raycast node. "
 				+ "Assign one in the inspector"]
 
 	return []
